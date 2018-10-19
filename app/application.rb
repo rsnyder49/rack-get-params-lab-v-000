@@ -17,7 +17,6 @@ class Application
       end 
     end
         
-
     if req.path.match(/items/)
       @@items.each do |item|
         resp.write "#{item}\n"
