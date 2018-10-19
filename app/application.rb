@@ -8,7 +8,12 @@ class Application
     req = Rack::Request.new(env)
     
     if req.path.match(/add/)
-      
+      add_item = req.params["item"]
+      if @@items.include?(add_item)
+        @@cart << add_item 
+      end 
+    end
+        
 
     if req.path.match(/items/)
       @@items.each do |item|
